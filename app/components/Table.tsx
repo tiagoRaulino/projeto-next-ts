@@ -23,7 +23,7 @@ function Table() {
                     <td>@fat</td>
                 </tr>
                 <tr>
-                    <td colpan="2">Larry the Bird</td>
+                    <td>Larry the Bird</td>
                     <td>@twitter</td>
                 </tr>
             </tbody>
