@@ -46,11 +46,11 @@ function Table() {
 
     return (
         <div>
-            <nav className="navbar bg-body-tertiary">
-                <div className="container-fluid">
+            <div className='container-lg mx-auto'>
+                <div className="container-fluid py-3" style={{ paddingLeft: 0, paddingRight: 0 }}>
                     <form className="d-flex" role="search" onSubmit={handleSearchSubmit}>
                         <input
-                            className="form-control me-2"
+                            className="form-control"
                             type="search"
                             placeholder="Search"
                             aria-label="Search"
@@ -59,31 +59,31 @@ function Table() {
                         />
                     </form>
                 </div>
-            </nav>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Model</th>
-                        <th scope="col">Brand</th>
-                        <th scope="col">Year</th>
-                        <th scope="col">Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {cars.filter((car) =>
-                        search === ''
-                            ? true
-                            : car.model.toLowerCase().includes(search.toLowerCase())
-                    ).map((car) => (
-                        <tr key={car.id}>
-                            <td className='fs-6'>{car.model}</td>
-                            <td className='fs-6'>{car.brand}</td>
-                            <td className='fs-6'>{car.year}</td>
-                            <td className='fs-6'>{car.price}</td>
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Model</th>
+                            <th scope="col">Brand</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">Price</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody className=''>
+                        {cars.filter((car) =>
+                            search === ''
+                                ? true
+                                : car.model.toLowerCase().includes(search.toLowerCase())
+                        ).map((car) => (
+                            <tr key={car.id}>
+                                <td className='fs-6'>{car.model}</td>
+                                <td className='fs-6'>{car.brand}</td>
+                                <td className='fs-6'>{car.year}</td>
+                                <td className='fs-6'>{car.price}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }
